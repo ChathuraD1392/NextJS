@@ -1,7 +1,7 @@
 "use client";
 
-import { Button, Callout, Text, TextArea, TextField } from "@radix-ui/themes";
-import SimpleMDE from "react-simplemde-editor";
+import { Button, Callout, TextField } from "@radix-ui/themes";
+import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -14,6 +14,9 @@ import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
 import delay from "delay";
 
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+  ssr: false
+});
 type IssueForm = z.infer<typeof createIssueSchema>;
 
 const NewIssuePage = async () => {
@@ -40,7 +43,7 @@ const NewIssuePage = async () => {
     }
     setSubmitting(false);
   });
-  await delay(2000);
+  //await delay(2000);
   return (
     <div className="max-w-xl space-y-2">
       {error && (
