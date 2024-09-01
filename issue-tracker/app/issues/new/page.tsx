@@ -9,9 +9,10 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createIssueSchema } from "@/app/createIssueSchema";
-import { set, z } from "zod";
+import { z } from "zod";
 import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
+
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
