@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React from "react";
 import { Link as RadixLink } from "@radix-ui/themes";
+import { preload } from "react-dom";
 
 interface Props {
   href: string;
-  children: ReactNode;
+  children: string;
 }
 
 const NextLink = ({ href, children }: Props) => {

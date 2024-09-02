@@ -1,9 +1,10 @@
 import { Table } from "@radix-ui/themes";
-import { Skeleton } from "@/app/components";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import React from "react";
 import IssueActions from "./IssueActions";
 
-export default function LoadingIssuePage() {
+const LoadingIssuePage = () => {
   const issues = [1, 2, 3, 4, 5];
   return (
     <div className="max-w-xl space-y-3">
@@ -41,4 +42,6 @@ export default function LoadingIssuePage() {
       </Table.Root>
     </div>
   );
-}
+};
+
+export default LoadingIssuePage;
